@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>A</string>
+		<key>cost</key>
+		<integer>-1</integer>
+		<key>coor</key>
+		<string>{10,10}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>B</string>
+		<key>cost</key>
+		<integer>-1</integer>
+		<key>coor</key>
+		<string>{270,50}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>C</string>
+		<key>cost</key>
+		<integer>-1</integer>
+		<key>coor</key>
+		<string>{170,300}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>4</integer>
+		<key>name</key>
+		<string>H</string>
+		<key>cost</key>
+		<integer>-1</integer>
+		<key>coor</key>
+		<string>{100,240}</string>
+	</dict>
+</array>
+</plist>

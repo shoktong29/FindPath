@@ -9,9 +9,9 @@
 #import "Node.h"
 
 @implementation Node
-@synthesize cost = _cost;
-@synthesize name = _name;
 @synthesize nodeId = _nodeId;
+@synthesize name = _name;
+@synthesize cost = _cost;
 @synthesize coor = _coor;
 @synthesize parentNode = _parentNode;
 
@@ -20,6 +20,7 @@
     self = [super init];
     if(self)
     {
+        _data = [data copy];
         _nodeId = [NSNumber numberWithFloat:[[data objectForKey:@"id"]floatValue]];;
         _name = [data objectForKey:@"name"];
         _cost = [NSNumber numberWithFloat:MAXFLOAT];
@@ -43,4 +44,17 @@
 {
     return [NSString stringWithFormat:@"%@ : nodeId=%@ name=%@ cost=%@",[super description],_nodeId,_name,_cost];
 }
+
+- (double)getAngleTo:(Node *)node
+{
+    CGPoint st = CGPointFromString(self.coor);
+    CGPoint en = CGPointFromString(node.coor);
+    return M_PI_2+atan2f(en.y-st.y , en.x-st.x); 
+}
+
+//- (id)copyWithZone:(NSZone *)zone
+//{
+//    Node *copy = [[Node alloc] initWithData:_data];
+//    return copy;
+//}
 @end

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+{
+    UIImageView *imageView;  
+    NSArray *listPath;
+}
 @end

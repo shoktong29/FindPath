@@ -10,33 +10,30 @@
 
 @implementation Dijktra
 
-+ (NSNumber *)findPathInGraph:(Graph *)graph
+- (NSMutableArray *)findPathInGraph:(Graph *)graph
 {
+    _graph = graph;
     //1. Set the cost of origin/start node to 0
-    [graph.startNode setCost:[NSNumber numberWithInt:0]];
+    [_graph.startNode setCost:[NSNumber numberWithInt:0]];
     
-    NSMutableArray *_nodeList = [[NSMutableArray alloc]initWithArray:[graph listNodes]];
-    
+    NSMutableArray *_listNodes = [[NSMutableArray alloc]initWithArray:[_graph listNodes]];
+    NSMutableArray *_listEdges = [[NSMutableArray alloc]initWithArray:[_graph listEdges]];
     //2. Get the node with the least cost value in the nodeList
-    while (_nodeList.count > 0) {
-        _nodeList = [self sortArrayOfDictionary:_nodeList byKey:@"cost"];
-        Node *node = [_nodeList objectAtIndex:0];
+    while(_listNodes.count > 0) {
+        _listNodes =   [self sortArrayOfDictionary:_listNodes byKey:@"cost"];
+        Node *node = [_listNodes objectAtIndex:0];
         
-        for (Node *node in _nodeList) {
-            Node *temp = [graph getNodeWithId:node.nodeId];
-            temp = node;
-        }
-    //3. Get all the neigbor of the current node and update their cost value
-        [_nodeList removeObject:node];
-        [self relaxNeighbor:node nodeList:_nodeList edgeList:[graph listEdges]];
+        //3. Get all the neigbor of the current node and update their cost value
+        [_listNodes removeObject:node];
+        [self relaxNeighbor:node nodeList:_listNodes edgeList:_listEdges];;
     }
     //5. Trace the path starting from the destination to start using nodes' parent.
-    NSMutableArray *listPath = [[NSMutableArray alloc]init];
-    listPath = [Dijktra performSelector:@selector(getPath:container:) withObject:[graph endNode] withObject:listPath];
-    return [graph endNode].cost;
+    _listPath = [[NSMutableArray alloc]init];
+    [self performSelector:@selector(getPath:) withObject:[_graph endNode]];
+    return _listPath;
 }
 
-+ (void)relaxNeighbor:(Node *)node nodeList:(NSMutableArray *)nodeList edgeList:(NSMutableArray *)edgeList
+- (void)relaxNeighbor:(Node *)node nodeList:(NSMutableArray *)nodeList edgeList:(NSMutableArray *)edgeList
 {
     for (int x=0; x<edgeList.count; x++) {
         Edge *edge = [edgeList objectAtIndex:x];
@@ -45,7 +42,8 @@
             CGPoint coorStart = CGPointFromString(edge.start.coor);
             CGPoint coorEnd = CGPointFromString(edge.end.coor);
             float currentCost = [edge.end.cost floatValue];
-            float newCost = sqrtf(coorStart.x*coorEnd.x + coorStart.y*coorEnd.y);
+            float newCost = ABS(sqrtf((coorEnd.x-coorStart.x)*(coorEnd.x-coorStart.x) + 
+                                  (coorEnd.y-coorStart.y)*(coorEnd.y-coorStart.y)));
            
             if(newCost < currentCost)
             {
@@ -65,27 +63,23 @@
     }
 }
 
-+ (NSArray *)getPath:(Node *)node container:(NSMutableArray *)container
+- (void)getPath:(Node *)node
 {
-    //NOTE: THIS METHOD IS REFUSES TO BE CANCELLED.. FIND A WAY TO CANCEL THIS.
-    NSMutableArray *temp = [[NSMutableArray alloc]initWithArray:container];
-    [temp insertObject:node atIndex:0];
+    [_listPath insertObject:node atIndex:0];
     if(node.parentNode != nil){
-        [self getPath:node.parentNode container:temp];
+        [self getPath:node.parentNode];
     }
     else {
-        for (int x=0; x<temp.count; x++) {
-            NSLog(@" -> %@",[[temp objectAtIndex:x] name]);
+        if ([_listPath objectAtIndex:0] != [_graph startNode]) {
+            _listPath = nil;
         }
     }
-    NSLog(@"KILL");
-    return (NSArray *)[temp copy];
 }
 
-+ (NSMutableArray *)sortArrayOfDictionary:(NSMutableArray *)array byKey:(NSString *)key
+- (NSMutableArray *)sortArrayOfDictionary:(NSMutableArray *)array byKey:(NSString *)key
 {
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc]initWithKey:key ascending:YES];
-    [array sortUsingDescriptors:[NSArray arrayWithObject:descriptor]];
+    [array sortUsingDescriptors:[NSArray arrayWithObject:descriptor]];  
     return array;
 }
 

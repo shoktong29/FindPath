@@ -6,41 +6,101 @@
 		<key>id</key>
 		<integer>1</integer>
 		<key>name</key>
-		<string>A</string>
+		<string>1</string>
 		<key>cost</key>
 		<integer>-1</integer>
 		<key>coor</key>
-		<string>{10,10}</string>
+		<string>{199,300}</string>
 	</dict>
 	<dict>
 		<key>id</key>
 		<integer>2</integer>
 		<key>name</key>
-		<string>B</string>
+		<string>2</string>
 		<key>cost</key>
 		<integer>-1</integer>
 		<key>coor</key>
-		<string>{270,50}</string>
+		<string>{109,212}</string>
 	</dict>
 	<dict>
 		<key>id</key>
 		<integer>3</integer>
 		<key>name</key>
-		<string>C</string>
-		<key>cost</key>
-		<integer>-1</integer>
+		<string>3</string>
 		<key>coor</key>
-		<string>{170,300}</string>
+		<string>{191,212}</string>
 	</dict>
 	<dict>
 		<key>id</key>
 		<integer>4</integer>
 		<key>name</key>
-		<string>H</string>
-		<key>cost</key>
-		<integer>-1</integer>
+		<string>4</string>
 		<key>coor</key>
-		<string>{100,240}</string>
+		<string>{271,212}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>5</string>
+		<key>coor</key>
+		<string>{263,120}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>6</integer>
+		<key>name</key>
+		<string>6</string>
+		<key>coor</key>
+		<string>{110,120}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>7</integer>
+		<key>name</key>
+		<string>7</string>
+		<key>coor</key>
+		<string>{15,120}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>8</integer>
+		<key>name</key>
+		<string>8</string>
+		<key>coor</key>
+		<string>{15,25}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>9</integer>
+		<key>name</key>
+		<string>9</string>
+		<key>coor</key>
+		<string>{110,25}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>10</integer>
+		<key>name</key>
+		<string>10</string>
+		<key>coor</key>
+		<string>{192,25}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>11</integer>
+		<key>name</key>
+		<string>11</string>
+		<key>coor</key>
+		<string>{152,78}</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>12</integer>
+		<key>name</key>
+		<string>12</string>
+		<key>coor</key>
+		<string>{260,25}</string>
 	</dict>
 </array>
 </plist>

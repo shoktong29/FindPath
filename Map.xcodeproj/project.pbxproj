@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E77D74AC1634F1DA009A1576 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = E77D74AB1634F1DA009A1576 /* MapView.m */; };
+		E77D74AF16350EC1009A1576 /* seemless.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E77D74AE16350EC0009A1576 /* seemless.jpeg */; };
+		E77D74D6163549C5009A1576 /* arrow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E77D74D5163549C5009A1576 /* arrow.jpeg */; };
 		E7AE7ED6162FFAEC00565C70 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AE7ED5162FFAEC00565C70 /* UIKit.framework */; };
 		E7AE7ED8162FFAEC00565C70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AE7ED7162FFAEC00565C70 /* Foundation.framework */; };
 		E7AE7EDA162FFAEC00565C70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7AE7ED9162FFAEC00565C70 /* CoreGraphics.framework */; };
@@ -25,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E77D74AA1634F1DA009A1576 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		E77D74AB1634F1DA009A1576 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		E77D74AE16350EC0009A1576 /* seemless.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seemless.jpeg; sourceTree = "<group>"; };
+		E77D74D5163549C5009A1576 /* arrow.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = arrow.jpeg; sourceTree = "<group>"; };
 		E7AE7ED1162FFAEC00565C70 /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AE7ED5162FFAEC00565C70 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E7AE7ED7162FFAEC00565C70 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,6 +143,10 @@
 				E7AE7F091630032D00565C70 /* Graph.m */,
 				E7AE7EFC162FFCC200565C70 /* NodeData.plist */,
 				E7AE7F02162FFD1000565C70 /* EdgeData.plist */,
+				E77D74AA1634F1DA009A1576 /* MapView.h */,
+				E77D74AB1634F1DA009A1576 /* MapView.m */,
+				E77D74AE16350EC0009A1576 /* seemless.jpeg */,
+				E77D74D5163549C5009A1576 /* arrow.jpeg */,
 			);
 			path = Dijkstra;
 			sourceTree = "<group>";
@@ -193,6 +204,8 @@
 				E7AE7EE0162FFAED00565C70 /* InfoPlist.strings in Resources */,
 				E7AE7EFD162FFCC300565C70 /* NodeData.plist in Resources */,
 				E7AE7F03162FFD1000565C70 /* EdgeData.plist in Resources */,
+				E77D74AF16350EC1009A1576 /* seemless.jpeg in Resources */,
+				E77D74D6163549C5009A1576 /* arrow.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +224,7 @@
 				E7AE7EFB162FFC4800565C70 /* Edge.m in Sources */,
 				E7AE7F07162FFF7700565C70 /* PlistHelper.m in Sources */,
 				E7AE7F0A1630032F00565C70 /* Graph.m in Sources */,
+				E77D74AC1634F1DA009A1576 /* MapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

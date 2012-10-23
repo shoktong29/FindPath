@@ -10,16 +10,24 @@
 #import "Graph.h"
 
 @interface Dijktra : NSObject
+{
+//    NSMutableArray *_listNodes;
+//    NSMutableArray *_listEdges;
+    NSMutableArray *_listPath;
+    Graph *_graph;
+    Node *startNode;
+    Node *endNode;
+}
 /* Computes and returns integer value for the travel cost(int). */
-+ (NSNumber *)findPathInGraph:(Graph *)graph;
+- (NSMutableArray *)findPathInGraph:(Graph *)graph;
 
 /* Gets the neibors of a node and update the cost value if necessary. */
-+ (void)relaxNeighbor:(Node *)node nodeList:(NSMutableArray *)nodeList edgeList:(NSMutableArray *)edgeList;
+- (void)relaxNeighbor:(Node *)node nodeList:(NSMutableArray *)nodeList edgeList:(NSMutableArray *)edgeList;
 
 /* Returns an array of nodes(the path). */
-+ (NSArray *)getPath:(Node *)node container:(NSMutableArray *)container;
+- (void)getPath:(Node *)node;
 
 /* Sorts array of dictionary in ascending according by key*/
-+ (NSMutableArray *)sortArrayOfDictionary:(NSMutableArray *)array byKey:(NSString *)key;
+- (NSMutableArray *)sortArrayOfDictionary:(NSMutableArray *)array byKey:(NSString *)key;
 
 @end

@@ -17,8 +17,4 @@
 @property (nonatomic, retain) Node *startNode;
 @property (nonatomic, retain) Node *endNode;
 - (Node *)getNodeWithId:(NSNumber *)nodeId;
-
-//For Display only
-- (void)renderNodes:(UIView *)renderLayer;
-- (void)renderEdges:(UIView *)renderLayer;
 @end

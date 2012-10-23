@@ -10,7 +10,7 @@
 
 @interface Node : NSObject
 {
-
+    NSDictionary *_data;
 }
 @property (nonatomic,readonly) NSNumber *nodeId;
 @property (nonatomic,readonly) NSNumber *cost;
@@ -18,8 +18,8 @@
 @property (nonatomic,readonly) __strong NSString *coor;
 @property (nonatomic,readonly) Node *parentNode;
 
-
 - (id)initWithData:(NSDictionary *)data;
 - (void)setCost:(NSNumber *)cost;
 - (void)setParentNode:(Node *)parentNode;
+- (double)getAngleTo:(Node *)node;
 @end
